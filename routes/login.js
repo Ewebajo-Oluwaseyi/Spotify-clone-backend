@@ -5,12 +5,11 @@ const SpotifyWebApi = require('spotify-web-api-node')
 router.post('/', (req, res) => {
     code = req.body.code
     const spotifyApi = new SpotifyWebApi({
-        redirectUri: "http://localhost:3000/",
+        redirectUri: "https://sheifunmi-spotify-clone-ewebajo-oluwaseyi.vercel.app",
         clientId: "cea15f2d1f164548b6042a367be00301",
         clientSecret: "760926660b534a54aea9cda6061ef41f"
     })
-    
-    //redirectUri: "https://sheifunmi-spotify-clone-ewebajo-oluwaseyi.vercel.app"
+
     spotifyApi
     .authorizationCodeGrant(code)
     .then(data => {
